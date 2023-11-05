@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <title>CS Academy</title>
+    <link rel="stylesheet" type="text/css" href="maincss.css">
+    
+</head>
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    
+
+    <body>
+        <body style="background-color: rgb(255, 255, 255); text-align: left; margin: 0px;">
+    <div class="parentContainer">
+        <img src="oNe.jpg" class="top-left" width="1440" height="40" alt="Landscape">
+        <a class="btcDesign" href="https://bobofishbo.github.io/csacademy-units/">Back to course</a>
+    </div>
+
+    <!--sidebar-->
+    <div class="sidebar">
+        <a class="active" href="#home" onclick="showContent('home')" style="font-size: 20px">| Introduction</a>
+        <a href="#surprise1" onclick="showContent('news')">| &#160 &#160 &#160 Code&Explanation</a>
+        <a href="#surprise2" onclick="showContent('contact')">| &#160 &#160 &#160 Sample Output</a>
+    </div>
+
+    <!-- Page content -->
+
+    <div class="content" id="homeContent">
+        <header>
+            <h1>1.4 sha256</h1>
+            <div class="dotted-line"></div>
+            <p><br>
+            Now we get to much more complicated encryption that is far harder to break: <b>sha256</b>. <br /> 
+            The reason behind the strength of the function is its increased memory of 256 bits which <br />
+            makes it practically impossible to break brute force (assuming no prior information).<br />
+            <br>
+
+            Our goal here is to firstly show the encryption in progress with our implementation of the <br /> 
+            function in python and secondly to create a machine learning model through tensorflow that <br />
+            is able to match a password with its sha256 cipher. <br />
+
+            <br>
+
+            Due to time and computing constraints, our model is unable to make consistent accurate <br /> 
+            predictions. However, the base architecture has been established and some of the following <br />
+            modifications could be made to make it more effective: switching the loss function to  <br />
+            `binary_crossentropy` and using cloud computing to generate larger datasets of password and <br />
+            cipher pairs. While we intended to allow users to play with our model through this webpage, <br />
+            tensorflow was unfortunately incompatible with pyscript in our html, so instead we will show <br />
+            and explain more code, and provide short demos on how the ML model runs in python. <br />
+
+           
+
+        </header>
+        
+        <button class="buttonClass" onclick="nextSection('news')">Next Section</button>
+    </div>
+    <div class="content" id="newsContent" style="display: none;">
+        <h1>Code and Explanation</h1>
+        <div class="dotted-line"></div>
+        <br>
+        <img src="codesample1.png" width="600" height ="240">
+        <img src="codesample2.png" width="600" height ="240">
+        <br>
+
+
+        
+        <button class="buttonClass" onclick="nextSection('contact')">Next Section</button>
+    </div>
+    <div class="content" id="contactContent" style="display: none;">
+        <h1>Sample Result</h1>
+        <div class="dotted-line"></div>
+        <br>
+        <img src="output.png" width="600" height ="240">
+        <br>
+
+
+
+
+        <button class="buttonClass" onclick="nextSection('about')">Next Section</button>
+    </div>
+    
+    <script>
+        // Get references to the input field, button, and output paragraph
+        var myText = document.getElementById("myText");
+        var submitBtn = document.getElementById("submitBtn");
+        var output = document.getElementById("output");
+
+        // Add a click event listener to the button
+        submitBtn.addEventListener("click", function() {
+            // Get the value of the input field
+            var inputValue = myText.value;
+
+            // Display the input value and clear the input field
+            output.textContent = "You entered: " + inputValue;
+            myText.value = ""; // Clear the input field
+        });
+    </script>
+
+
+    <script>
+        function showContent(contentId) {
+    // Hide all content elements
+    var contentElements = document.querySelectorAll('.content');
+    contentElements.forEach(function (element) {
+        element.style.display = 'none';
+    });
+
+    // Show the selected content element
+    var selectedContent = document.getElementById(contentId + 'Content');
+    if (selectedContent) {
+        selectedContent.style.display = 'block';
+    }
+
+    // Remove the 'active' class from all menu items
+    var menuItems = document.querySelectorAll('.sidebar a');
+    menuItems.forEach(function (item) {
+        item.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked menu item
+    var clickedMenuItem = document.querySelector('.sidebar a[href="#' + contentId + '"]');
+    if (clickedMenuItem) {
+        clickedMenuItem.classList.add('active');
+    }
+}
+
+function nextSection(nextContentId) {
+    // Hide all content elements
+    var contentElements = document.querySelectorAll('.content');
+    contentElements.forEach(function (element) {
+        element.style.display = 'none';
+    });
+
+    // Show the selected content element
+    var selectedContent = document.getElementById(nextContentId + 'Content');
+    if (selectedContent) {
+        selectedContent.style.display = 'block';
+    }
+
+    // Remove the 'active' class from all menu items
+    var menuItems = document.querySelectorAll('.sidebar a');
+    menuItems.forEach(function (item) {
+        item.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked menu item
+    var clickedMenuItem = document.querySelector('.sidebar a[href="#' + nextContentId + '"]');
+    if (clickedMenuItem) {
+        clickedMenuItem.classList.add('active');
+    }
+}
+
+
+    </script>
+</body>
+</html>

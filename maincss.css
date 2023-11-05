@@ -1,0 +1,93 @@
+.parentContainer {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    color: rgb(98, 111, 164);
+}
+
+
+.dotted-line {
+            width: 700px; /* Adjust the width as needed */
+          
+            border-bottom: 1px dotted #000; /* Adjust line thickness and color as needed */
+}
+
+
+.btcDesign {
+    position: fixed;
+    text-decoration: none;
+    color: rgb(98, 111, 164);
+
+    top: 10px;
+    left: 35px;
+}
+
+.top-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: rgb(249, 249, 249);
+    position: fixed;
+    top: 40px;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: rgb(103, 103, 103);
+    padding: 10px 10px 5px 50px;
+    font-family: 'Open Sans';
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    
+    color: rgb(79, 78, 220);
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(249, 249, 249);
+    color: rgb(79, 78, 220);
+  }
+  
+  div.content {
+    position:absolute;
+    font-family: 'Open Sans';
+    top: 5%;
+    left: 30%;
+    padding: 1px 16px;
+    height: 1000px;
+    color:rgb(79, 78, 220)
+  }
+
+
+h1{
+    color:rgb(79, 78, 220)
+}
+
+.buttonClass {
+    position:absolute;
+    bottom:30%;
+    right:10%;
+    
+    font-size: 16px; /* Adjust the font size */
+    padding: 8px 16px; /* Adjust the padding for width and height */
+    background-color: rgb(79, 78, 220); /* Adjust the background color */
+    color: #ffffff; /* Adjust the text color */
+    border: none;
+    border-radius: 2px; /* Adjust the border radius for rounded corners */
+   
+}
+
+p{
+    color: black
+}
